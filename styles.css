@@ -1,0 +1,131 @@
+/* Ok so it said to only use bootstrap 5 and I'm HOPING that means only boostrap when it comes to java and I can still use like classes and stuff. If not then I am deeply sorry for what I am about to do. */
+
+/* also i felt really energetic so the comments are happy */
+
+/* colors stolen from canva mwehehe https://www.canva.com/colors/color-palettes/canyon-before-dusk/ */
+:root {
+    --bg-light: #f8f4d7;
+    --bg-medium: #E6BDCC;
+    --bg-dark: #A3768B;
+    --text-main: #282e3a;
+    --text-strong: #000000;
+}
+
+/* It feels wrong putting something on the html tag instead of like body but thats fine i guess ! makes stuff scroll smooth when i click the nav links though or any other similar links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Adds some basic stuff to the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-light);
+    margin: 0;
+}
+
+/* Stickied nav bar yippeee */
+.main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    /* this makes it a column, im HOPING that making it mobile first isnt an issue because it didnt directly say mobile first but ima go with it anyway cause ig it didnt say NOT to do mobile first just like responsive n what not */
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    background-color: var(--bg-medium);
+    border-bottom: 2px solid var(--bg-dark);
+}
+
+/* Rounded uhh circlebox>????>???? idrk man its a box and its circle-ized and i dont know the exact term LMAO it helps differentiate each link though !!!!!!!!!! */
+.nav-link-circlebox {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    /* This is cool!!!! it makes it so when hovered and it changes color its not an instant change in color :D felt real fancy*/
+}
+
+/* Hover and focus stuff for hovering w mouse or using tab. Nothing about previously visited though cause its all on one page so a little pointless I think. */
+.nav-link-circlebox:hover,
+.nav-link-circlebox:focus {
+    background-color: var(--text-main);
+    color: var(--bg-light);
+}
+
+/* Mark current page (Home for now) */
+.nav-link-circlebox[aria-current="page"] {
+    background-color: var(--text-main);
+    color: var(--bg-light);
+}
+
+/* paragraph border & background cause the p's in the carousel need a border and a background so they can be seen against the image */
+.carousel-caption p {
+    border: 2pt solid var(--text-main);
+    background-color: #e6bdcce0;
+    color: var(--text-main)
+}
+
+/* Makes the cards tinier n stuff :D and roundness */
+.service-card {
+    max-width: 260px;
+    border: 2px solid var(--bg-dark);
+    border-radius: 10px;
+    background-color: var(--bg-medium);
+}
+
+/* Makes images smaller and makes the corners rounded so its not sticking out of the box's borders cause theyre rounded as well */
+.service-card img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Titles */
+.service-card .card-title {
+    color: var(--text-main);
+    font-weight: bold;
+}
+
+/* Makes text on the cards smaller  */
+.service-card .card-text {
+    color: var(--text-main);
+    font-size: 0.9rem;
+}
+
+/* Makes the faq use MY color instead of the boostrap's */
+#faq h2 {
+    color: var(--text-main);
+}
+
+/* Changes color for my canva thjeme */
+.accordion-button {
+    background-color: var(--bg-medium);
+    color: var(--text-main);
+}
+
+/* When its open it goes to the darker bg color and the text goes light*/
+.accordion-button:not(.collapsed) {
+    background-color: var(--bg-dark);
+    color: var(--bg-light);
+}
+
+/* Background and text color changes for the faq answers */
+.accordion-body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+}
+
+/* So bigger screens have wider stuff with like nav and anything else I'll add */
+@media (min-width: 720px) {
+    .main-nav {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
